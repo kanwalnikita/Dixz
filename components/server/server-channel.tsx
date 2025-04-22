@@ -1,6 +1,3 @@
- 
-
-
 "use client"
 
 import { cn } from "@/lib/utils"
@@ -9,7 +6,7 @@ import { Edit, Hash,Mic,Trash,Video,Lock } from "lucide-react"
 import { useParams, useRouter } from "next/navigation"
 import { ActionTooltip } from "@/components/action-tooltip"
 import { ModalType, useModal } from "@/hooks/use-modal-store"
-import React from "react"
+import React from  "react"
 interface ServerChannelProps{
     channel:Channel;
     server:Server;

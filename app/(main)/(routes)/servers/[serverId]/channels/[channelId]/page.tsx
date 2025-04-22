@@ -1,4 +1,3 @@
- 
 import {ChatHeader} from "@/components/chat/chat-header";
 import { ChatInput } from "@/components/chat/chat-input";
 import { ChatMessages } from "@/components/chat/chat-messages";
@@ -15,10 +14,10 @@ interface ChannelIdPageProps{
         channelId:string;
     }
 }
+
 const ChannelIdPage = async({
     params
 }:ChannelIdPageProps) => {
-
     const profile = await currentProfile();
     if(!profile){
 
@@ -41,16 +40,16 @@ const ChannelIdPage = async({
         redirect("/");
     }
 
-
-
     return (  
-        <div className="bg-white dark:bg-[#313338] flex flex-col h-full">
+      
+       
+    <div className='bg-zinc-200 dark:bg-[#313338] flex flex-col h-[100vh]'>
             <ChatHeader
             name={channel.name}
             serverId={channel.serverId}
             type="channel"
             /> 
-                {channel.type === ChannelType.TEXT && (
+          {channel.type === ChannelType.TEXT && (
         <>
           <ChatMessages
             member={member}
@@ -78,10 +77,14 @@ const ChannelIdPage = async({
         </>
       )}
       {channel.type === ChannelType.AUDIO && (
-        <MediaRoom chatId={channel.id} video={false} audio={true} />
+        <MediaRoom chatId={channel.id} 
+        video={false} 
+        audio={true} />
       )}
       {channel.type === ChannelType.VIDEO && (
-        <MediaRoom chatId={channel.id} video={true} audio={false} />
+        <MediaRoom chatId={channel.id}
+         video={true} 
+         audio={true} />
       )}
         </div>
     );

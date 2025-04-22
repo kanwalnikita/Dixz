@@ -1,5 +1,5 @@
  import { useEffect, useState } from "react"
-
+//useOrigin returns the origin of the current website
 export  const useOrigin= () =>{
     const[mounted,setMounted] = useState(false);
 
