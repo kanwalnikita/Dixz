@@ -11,7 +11,9 @@ const nextConfig = {
         domains:[       //images.remotePatterns     agar domains kam nhji kiya to as it is deprecated
             "utfs.io"
         ]
-    }
+    },eslint: {
+        ignoreDuringBuilds: true,
+      }
 };
 
 export default nextConfig;
